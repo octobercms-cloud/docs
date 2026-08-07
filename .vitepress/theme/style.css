@@ -149,15 +149,31 @@ body {
   background-color: var(--vp-c-bg);
   background-image: linear-gradient(
     to bottom,
-    color-mix(in oklab, var(--color-orange-500) 20%, transparent),
+    color-mix(in oklab, var(--color-orange-500) 10%, transparent),
     color-mix(in oklab, var(--color-orange-200) 0%, transparent)
   );
   background-size: 100% calc(var(--spacing) * 96);
   background-repeat: no-repeat;
 }
 
+.VPNavBar .title,
+.VPNavBar .content-body {
+  transition: background-color 0.25s ease;
+}
+
 .VPSidebar .group + .group {
   border-top: none;
+}
+
+@media (min-width: 960px) {
+  .VPSidebar {
+    top: var(--vp-nav-height) !important;
+    padding-top: 32px !important;
+  }
+
+  .VPSidebar .curtain {
+    display: none !important;
+  }
 }
 
 @media (min-width: 960px) {
