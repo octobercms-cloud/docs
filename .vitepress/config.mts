@@ -1,5 +1,32 @@
 import tailwindcss from '@tailwindcss/vite'
-import { defineConfig } from 'vitepress'
+import { defineConfig, type HeadConfig } from 'vitepress'
+
+const env = (globalThis as { process?: { env?: Record<string, string | undefined> } })
+  .process?.env
+
+const googleAnalyticsId = env?.GOOGLE_ANALYTICS_ID
+const isProduction = env?.NODE_ENV === 'production'
+
+const analyticsHead: HeadConfig[] =
+  isProduction && googleAnalyticsId
+    ? [
+        [
+          'script',
+          {
+            async: '',
+            src: `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`,
+          },
+        ],
+        [
+          'script',
+          {},
+          `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${googleAnalyticsId}');`,
+        ],
+      ]
+    : []
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -8,6 +35,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  lang: 'en-US',
 
   title: 'octobercms.cloud',
   description: 'Official documentation for octobercms.cloud',
@@ -21,6 +50,7 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.bunny.net' }],
     ['link', { href: 'https://fonts.bunny.net/css?family=albert-sans:400,700', rel: 'stylesheet' }],
+    ...analyticsHead,
   ],
 
   themeConfig: {
