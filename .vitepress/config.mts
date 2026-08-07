@@ -11,6 +11,7 @@ export default defineConfig({
 
   title: 'octobercms.cloud',
   description: 'Official documentation for octobercms.cloud',
+  lastUpdated: true,
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
