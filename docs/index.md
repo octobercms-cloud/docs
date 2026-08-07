@@ -12,7 +12,7 @@ October Cloud is a fully managed hosting and deployment platform. Here are just 
 - Object storage
 - SSL certificates
 - Push to deploy
-- Any much, much more!
+- And much, much more!
 
 ## Project Status
 

@@ -1,10 +1,14 @@
+---
+title: Getting Started - October Cloud
+---
+
 <!-- start-no-copy -->
 <p class="doc-section">Get Started</p>
 <!-- end-no-copy -->
 
 # October CMS
 
-Our platform is purpose built for, and deeply integrated with October CMS. No matter how you work, **you'll never lose a change again**.
+Our platform is built specifically for, and deeply integrated with [October CMS](https://octobercms.com). We support both local editing, and using the backend editor. No matter your workflow, **you'll never lose a change again**.
 
 ## How it works
 
