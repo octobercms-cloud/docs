@@ -2,7 +2,7 @@
 
 # Welcome to October Cloud
 
-The official hosting platform for [October CMS](https://octobercms.com). Let us worry about infrastructure; you just focus on what makes your website amazing.
+We're the official hosting platform for [October CMS](https://octobercms.com). Let us worry about infrastructure; you focus on what making your website amazing.
 
 October Cloud is a fully managed hosting and deployment platform. Here are just some of the features included,
 
