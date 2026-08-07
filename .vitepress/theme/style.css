@@ -140,7 +140,20 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-sidebar-bg-color: var(--vp-c-bg);
+  --vp-sidebar-bg-color: transparent;
+  --vp-nav-bg-color: transparent;
+  --vp-local-nav-bg-color: transparent;
+}
+
+body {
+  background-color: var(--vp-c-bg);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--color-orange-500) 20%, transparent),
+    color-mix(in oklab, var(--color-orange-200) 0%, transparent)
+  );
+  background-size: 100% calc(var(--spacing) * 96);
+  background-repeat: no-repeat;
 }
 
 .VPSidebar .group + .group {
