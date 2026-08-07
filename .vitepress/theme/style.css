@@ -230,10 +230,23 @@ body {
   border-bottom: none;
 }
 
+/* ThemePicker replaces the built-in appearance switch, which leaves the extra
+   flyout empty between 768px and 1280px. */
 .VPNavBarAppearance,
-.VPNavBarExtra .appearance,
+.VPNavBarExtra,
 .VPNavScreenAppearance {
   display: none !important;
+}
+
+/* The search modal is triggered by SearchButton instead, but VPNavBarSearch
+   still has to render because it owns the modal. */
+.VPNavBar .VPNavBarSearchButton {
+  display: none !important;
+}
+
+.VPNavBar .VPNavBarSearch {
+  flex-grow: 0 !important;
+  padding-left: 0 !important;
 }
 
 .VPNavScreen .ThemePicker {
@@ -242,6 +255,18 @@ body {
 
 .VPNavScreen .NavScreenActions {
   margin-top: 16px;
+}
+
+/* The default theme makes search full screen below 768px, which hides the
+   backdrop and leaves the back arrow as the only way out. */
+@media (max-width: 767px) {
+  .VPLocalSearchBox .shell {
+    margin: 16px auto !important;
+    width: calc(100vw - 32px) !important;
+    height: min-content !important;
+    max-height: calc(100vh - 32px) !important;
+    border-radius: 12px !important;
+  }
 }
 
 .VPDoc {

@@ -2,7 +2,7 @@
   <div ref="root" class="ThemePicker relative">
     <button
       type="button"
-      class="flex size-9 items-center justify-center rounded-xl text-gray-500 transition-colors hover:bg-gray-200/50 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700/40 dark:hover:text-gray-200"
+      class="flex size-9 items-center justify-center rounded-xl transition-colors hover:bg-gray-200/50 dark:hover:bg-gray-700/40"
       :aria-expanded="open"
       aria-haspopup="listbox"
       title="Select color theme"
