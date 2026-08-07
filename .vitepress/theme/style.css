@@ -248,6 +248,19 @@ body {
   @apply pt-6!;
 }
 
+.vp-doc h1:has(.CopyPage) {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vp-doc h1:has(.CopyPage) .CopyPage {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
 .doc-section {
   @apply text-sm font-semibold text-orange-500 dark:text-orange-400;
 }

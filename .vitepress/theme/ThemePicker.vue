@@ -39,6 +39,7 @@
 import { Monitor, Moon, Sun } from '@lucide/vue'
 import { useColorMode } from '@vueuse/core'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { useExclusiveDropdown } from './useExclusiveDropdown'
 
 type Mode = 'light' | 'dark' | 'auto'
 
@@ -53,7 +54,7 @@ const mode = useColorMode({
   },
 })
 
-const open = ref(false)
+const open = useExclusiveDropdown('theme-picker')
 const root = ref<HTMLElement | null>(null)
 
 const options = [

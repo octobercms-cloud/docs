@@ -3,6 +3,7 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Ecosystem from './Ecosystem.vue'
+import CopyPage from './CopyPage.vue'
 import Logo from './Logo.vue'
 import NavActions from './NavActions.vue'
 import NavScreenActions from './NavScreenActions.vue'
@@ -17,6 +18,7 @@ export default {
       'nav-bar-content-after': () => h(NavActions),
       'nav-screen-content-after': () => h(NavScreenActions),
       'sidebar-nav-before': () => h(Ecosystem),
+      'doc-before': () => h(CopyPage),
     })
   },
   enhanceApp({ app, router, siteData }) {
