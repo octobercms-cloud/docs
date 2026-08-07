@@ -8,7 +8,7 @@ Our platform is purpose built for, and deeply integrated with October CMS. No ma
 
 ## How it works
 
-October Cloud solves one of the oldest problems with CMS development. Enabling modern git-based local development, while still allowing live edits from the backend.
+October Cloud solves one of the oldest problems with CMS development. Enabling modern git-based workflows, while still allowing live edits from the backend.
 
 We call this feature “reconciliation”. When a backend edit is made, October Cloud will open a pull request for that change. From there, every commit will trigger a deployment.
 
