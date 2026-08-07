@@ -3,7 +3,13 @@
   "description": "Official documentation for October Cloud",
   "packageManager": "pnpm@10.33.2",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "devDependencies": {
+    "vitepress": "2.0.0-alpha.19"
+  }
 }
