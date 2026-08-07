@@ -1,5 +1,6 @@
 import { defineConfig, type HeadConfig } from 'vitepress'
 import { sidebar } from './sidebar'
+import { writeLlmsFullTxt } from './generateLlmsFullTxt'
 import { writeLlmsTxt } from './generateLlmsTxt'
 import tailwindcss from '@tailwindcss/vite'
 import type { SiteConfig } from 'vitepress'
@@ -36,6 +37,7 @@ const analyticsHead: HeadConfig[] =
 export default defineConfig({
   buildEnd(siteConfig: SiteConfig) {
     writeLlmsTxt(siteConfig.outDir)
+    writeLlmsFullTxt(siteConfig.outDir, siteConfig.srcDir)
   },
   cleanUrls: true,
   head: [

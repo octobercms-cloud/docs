@@ -1,36 +1,9 @@
 import { join } from 'node:path'
-import { sidebar } from './sidebar'
 import { writeFileSync } from 'node:fs'
-import type { DefaultTheme } from 'vitepress'
-
-type DocPage = {
-  title: string
-  url: string
-}
-
-function flattenSidebar(items: DefaultTheme.SidebarItem[]): DocPage[] {
-  const pages: DocPage[] = []
-
-  for (const item of items) {
-    if ('items' in item && item.items) {
-      pages.push(...flattenSidebar(item.items))
-      continue
-    }
-
-    if ('link' in item && item.link && item.text) {
-      const path = item.link === '/' ? '/' : item.link.replace(/\/$/, '')
-      pages.push({
-        title: item.text,
-        url: `https://docs.octobercms.cloud${path}`,
-      })
-    }
-  }
-
-  return pages
-}
+import { getDocPages } from './docPages'
 
 export function generateLlmsTxtContent(): string {
-  const pages = flattenSidebar(sidebar)
+  const pages = getDocPages()
 
   const docEntries = pages
     .map(
