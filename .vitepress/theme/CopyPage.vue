@@ -1,6 +1,6 @@
 <template>
   <Teleport v-if="heading" :to="heading">
-    <div ref="root" class="CopyPage relative ml-auto flex shrink-0 items-center self-center">
+    <div ref="root" class="CopyPage relative ml-auto flex shrink-0 items-center self-baseline" data-no-copy>
       <button
         type="button"
         class="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700/60"
@@ -102,6 +102,7 @@
 import { ChevronDown, ChevronUp, Copy, ExternalLink } from '@lucide/vue'
 import { useData } from 'vitepress'
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { stripNoCopy } from './stripNoCopy'
 import { useExclusiveDropdown } from './useExclusiveDropdown'
 
 const markdownFiles = import.meta.glob('../../docs/**/*.md', {
@@ -135,16 +136,17 @@ const claudeUrl = computed(
 
 async function getMarkdown() {
   const relativePath = page.value.relativePath.replace(/\\/g, '/')
-  const key = Object.keys(markdownFiles).find((path) =>
-    path.replace(/\\/g, '/').endsWith(`/docs/${relativePath}`) ||
-    path.replace(/\\/g, '/').endsWith(relativePath),
+  const key = Object.keys(markdownFiles).find(
+    (path) =>
+      path.replace(/\\/g, '/').endsWith(`/docs/${relativePath}`) ||
+      path.replace(/\\/g, '/').endsWith(relativePath),
   )
 
   if (!key || !markdownFiles[key]) {
     throw new Error('Markdown source not found for this page')
   }
 
-  return markdownFiles[key]()
+  return stripNoCopy(await markdownFiles[key]())
 }
 
 async function copyMarkdown() {

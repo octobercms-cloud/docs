@@ -1,4 +1,4 @@
-<p class="doc-section">Advanced</p>
+<p class="doc-section" data-no-copy>Advanced</p>
 
 # Scheduled Tasks
 

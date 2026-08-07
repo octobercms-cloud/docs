@@ -250,15 +250,14 @@ body {
 
 .vp-doc h1:has(.CopyPage) {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 1rem;
 }
 
 .vp-doc h1:has(.CopyPage) .CopyPage {
   display: inline-flex;
   align-items: center;
-  align-self: center;
-  vertical-align: middle;
+  align-self: baseline;
 }
 
 .doc-section {

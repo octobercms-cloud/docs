@@ -1,4 +1,4 @@
-<p class="doc-section">Other</p>
+<p class="doc-section" data-no-copy>Other</p>
 
 # Terms of Service
 

@@ -1,4 +1,4 @@
-<p class="doc-section">Basics</p>
+<p class="doc-section" data-no-copy>Basics</p>
 
 # Applications
 

@@ -27,7 +27,7 @@ export default defineConfig({
         text: 'Getting Started',
         items: [
           { text: 'Introduction', link: '/' },
-          { text: 'Deploying October', link: '/deploying-october' },
+          { text: 'October CMS', link: '/october' },
           { text: 'Licensing', link: '/licensing' },
         ],
       },
