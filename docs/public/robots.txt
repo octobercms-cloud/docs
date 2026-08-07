@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Documentation
+Sitemap: https://docs.octobercms.cloud/sitemap.xml
+
+# Crawl politely, but don't restrict.
+Crawl-delay: 1
