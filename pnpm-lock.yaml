@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@lucide/vue':
+        specifier: ^1.29.0
+        version: 1.29.0(vue@3.5.41)
     devDependencies:
       '@tailwindcss/vite':
         specifier: ^4.3.3
@@ -70,6 +74,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@lucide/vue@1.29.0':
+    resolution: {integrity: sha512-UnbPPAdxWGqABrjcQJZFqawSgZTBmeKOrNFPI9sqKaDkgLoEbYyx+ivIdiYRR1YoYhWWg7dCdvjtCwK6zBxWDQ==}
+    peerDependencies:
+      vue: '>=3.0.1'
 
   '@oxc-project/types@0.143.0':
     resolution: {integrity: sha512-u6JZdLBTLotrNC9Vd6vPssINdzcCzleKAH6EJKImQb7GtYvX5keN2dxkoK44stCc4tffE6QQRtZTXVSzsLUlWA==}
@@ -874,6 +883,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@lucide/vue@1.29.0(vue@3.5.41)':
+    dependencies:
+      vue: 3.5.41
 
   '@oxc-project/types@0.143.0': {}
 
