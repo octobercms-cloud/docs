@@ -56,6 +56,12 @@ export default defineConfig({
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    search: {
+      provider: 'local',
+      options: {
+        detailedView: true,
+      },
+    },
     siteTitle: false,
     sidebar: [
       {
