@@ -1,10 +1,14 @@
-import tailwindcss from '@tailwindcss/vite'
 import { defineConfig, type HeadConfig } from 'vitepress'
+import { sidebar } from './sidebar'
+import { writeLlmsTxt } from './generateLlmsTxt'
+import tailwindcss from '@tailwindcss/vite'
+import type { SiteConfig } from 'vitepress'
 
 const env = (globalThis as { process?: { env?: Record<string, string | undefined> } })
   .process?.env
 
 const googleAnalyticsId = env?.GOOGLE_ANALYTICS_ID
+
 const isProduction = env?.NODE_ENV === 'production'
 
 const analyticsHead: HeadConfig[] =
@@ -30,30 +34,23 @@ const analyticsHead: HeadConfig[] =
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  srcDir: 'docs',
+  buildEnd(siteConfig: SiteConfig) {
+    writeLlmsTxt(siteConfig.outDir)
+  },
   cleanUrls: true,
-
-  vite: {
-    plugins: [tailwindcss()],
-  },
-
-  lang: 'en-US',
-
-  title: 'octobercms.cloud',
-  description: 'Official documentation for octobercms.cloud',
-  lastUpdated: true,
-
-  sitemap: {
-    hostname: 'https://docs.octobercms.cloud',
-  },
-
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.bunny.net' }],
     ['link', { href: 'https://fonts.bunny.net/css?family=albert-sans:400,700', rel: 'stylesheet' }],
     ...analyticsHead,
   ],
-
+  description: 'Official documentation for octobercms.cloud',
+  lang: 'en-US',
+  lastUpdated: true,
+  sitemap: {
+    hostname: 'https://docs.octobercms.cloud',
+  },
+  srcDir: 'docs',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     search: {
@@ -63,49 +60,10 @@ export default defineConfig({
       },
     },
     siteTitle: false,
-    sidebar: [
-      {
-        text: 'Getting Started',
-        items: [
-          { text: 'Introduction', link: '/' },
-          { text: 'October CMS', link: '/october' },
-          { text: 'Licensing', link: '/licensing' },
-        ],
-      },
-      {
-        text: 'Basics',
-        items: [
-          { text: 'Applications', link: '/applications' },
-          { text: 'Databases', link: '/databases' },
-          { text: 'Storage', link: '/storage' },
-          { text: 'Domains', link: '/domains' },
-          { text: 'Deployments', link: '/deployments' },
-        ],
-      },
-      {
-        text: 'Advanced',
-        items: [
-          { text: 'Organizations', link: '/organizations' },
-          { text: 'Source Control', link: '/source-control' },
-          { text: 'Artisan', link: '/artisan' },
-          { text: 'Logs', link: '/logs' },
-          { text: 'Build Scripts', link: '/build-scripts' },
-          { text: 'Environment Variables', link: '/environment-variables' },
-          { text: 'Queue Workers', link: '/queue-workers' },
-          { text: 'Scheduled Tasks', link: '/scheduled-tasks' },
-        ],
-      },
-      {
-        text: 'Other',
-        items: [
-          { text: 'Support', link: '/support' },
-          { text: 'Changelog', link: '/changelog' },
-          { text: 'Security & Abuse', link: '/security-and-abuse' },
-          { text: 'Terms of Service', link: '/terms-of-service' },
-          { text: 'Privacy Policy', link: '/privacy-policy' },
-        ],
-      },
-    ],
-
+    sidebar,
+  },
+  title: 'octobercms.cloud',
+  vite: {
+    plugins: [tailwindcss()],
   },
 })
