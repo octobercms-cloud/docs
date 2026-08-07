@@ -4,22 +4,21 @@ layout: home
 
 hero:
   name: "October Cloud"
-  text: "Official documentation for octobercms.cloud"
-  tagline: My great project tagline
+  text: "Official documentation"
+  tagline: Deploy and manage October CMS applications in the cloud.
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get Started
+      link: /getting-started/introduction
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Applications
+      link: /basics/applications
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Deploy in minutes
+    details: Launch October CMS applications with managed infrastructure and simple deployments.
+  - title: Built for teams
+    details: Organize projects, manage domains, storage, and databases from one place.
+  - title: Production ready
+    details: Queue workers, scheduled tasks, environment variables, and logs when you need them.
 ---
-
