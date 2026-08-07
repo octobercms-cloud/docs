@@ -180,7 +180,7 @@ body {
 .VPSidebar {
   scrollbar-width: thin;
   scrollbar-color: var(--color-gray-300) transparent;
-  padding-top: 0s !important;
+  padding-top: 0 !important;
 }
 
 .dark .VPSidebar {
@@ -237,7 +237,15 @@ body {
 }
 
 .VPNavScreen .ThemePicker {
-  margin: 16px 0;
+  margin: 0;
+}
+
+.VPNavScreen .NavScreenActions {
+  margin-top: 16px;
+}
+
+.VPDoc {
+  @apply pt-6!;
 }
 
 .VPSidebarItem.is-link {

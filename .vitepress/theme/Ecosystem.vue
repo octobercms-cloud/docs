@@ -1,6 +1,6 @@
 <template>
-  <div class="mb-6">
-    <div class="mt-3 flex -translate-x-3 flex-col gap-0.5">
+  <div class="my-6">
+    <div class="flex -translate-x-3 flex-col gap-0.5">
       <a
         href="https://www.reddit.com/r/octobercms"
         target="_blank"

@@ -5,7 +5,7 @@ import DefaultTheme from 'vitepress/theme'
 import Ecosystem from './Ecosystem.vue'
 import Logo from './Logo.vue'
 import NavActions from './NavActions.vue'
-import ThemePicker from './ThemePicker.vue'
+import NavScreenActions from './NavScreenActions.vue'
 import './style.css'
 
 export default {
@@ -15,7 +15,7 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       'nav-bar-title-before': () => h(Logo),
       'nav-bar-content-after': () => h(NavActions),
-      'nav-screen-content-after': () => h(ThemePicker),
+      'nav-screen-content-after': () => h(NavScreenActions),
       'sidebar-nav-before': () => h(Ecosystem),
     })
   },
