@@ -147,13 +147,19 @@
   border-top: none;
 }
 
-.VPNavBarTitle.has-sidebar .title {
-  border-bottom-color: transparent;
+@media (min-width: 960px) {
+  .VPNavBarTitle.has-sidebar .title {
+    border-bottom: none !important;
+  }
 }
 
 .VPNavBar .divider,
 .VPNavBar .divider-line {
-  background-color: transparent;
+  background-color: transparent !important;
+}
+
+.VPLocalNav {
+  border-bottom: none;
 }
 
 .VPSidebarItem.is-link {
