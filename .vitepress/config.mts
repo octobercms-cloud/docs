@@ -31,6 +31,7 @@ const analyticsHead: HeadConfig[] =
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   srcDir: 'docs',
+  cleanUrls: true,
 
   vite: {
     plugins: [tailwindcss()],

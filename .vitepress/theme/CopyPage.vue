@@ -100,7 +100,7 @@
 
 <script setup lang="ts">
 import { ChevronDown, ChevronUp, Copy, ExternalLink } from '@lucide/vue'
-import { onContentUpdated, useData } from 'vitepress'
+import { inBrowser, onContentUpdated, useData, useRoute } from 'vitepress'
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { stripNoCopy } from './stripNoCopy'
 import { useExclusiveDropdown } from './useExclusiveDropdown'
@@ -111,6 +111,7 @@ const markdownFiles = import.meta.glob('../../docs/**/*.md', {
 }) as Record<string, () => Promise<string>>
 
 const { page } = useData()
+const route = useRoute()
 
 const open = useExclusiveDropdown('copy-page')
 const copied = ref(false)
@@ -118,7 +119,7 @@ const root = ref<HTMLElement | null>(null)
 const heading = ref<HTMLElement | null>(null)
 
 const pageUrl = computed(() =>
-  typeof window === 'undefined' ? '' : window.location.href,
+  inBrowser ? new URL(route.path, window.location.origin).href : '',
 )
 
 const prompt = computed(
