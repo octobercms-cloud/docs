@@ -1,25 +1,7 @@
 import { join } from 'node:path'
 import { readFileSync, writeFileSync } from 'node:fs'
-import { getDocPages } from './docPages'
-
-function linkToMarkdownPath(link: string): string {
-  if (link === '/') {
-    return 'index.md'
-  }
-
-  return `${link.replace(/^\//, '')}.md`
-}
-
-function cleanMarkdownContent(content: string): string {
-  return content
-    .replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '')
-    .replace(/<!-- start-no-copy -->[\s\S]*?<!-- end-no-copy -->\n?/g, '')
-    .replace(
-      /<pre data-copy-hidden>\n?([\s\S]*?)<\/pre>\n?/g,
-      '```\n$1```\n',
-    )
-    .trim()
-}
+import { cleanMarkdownContent } from './cleanMarkdownContent'
+import { getDocPages, linkToMarkdownPath } from './docPages'
 
 export function generateLlmsFullTxtContent(srcDir: string): string {
   const pages = getDocPages()
