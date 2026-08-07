@@ -1,4 +1,6 @@
-<p class="doc-section" data-no-copy>Other</p>
+<!-- start-no-copy -->
+<p class="doc-section">Other</p>
+<!-- end-no-copy -->
 
 # Security & Abuse
 

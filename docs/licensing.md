@@ -1,4 +1,6 @@
-<p class="doc-section" data-no-copy>Get Started</p>
+<!-- start-no-copy -->
+<p class="doc-section">Get Started</p>
+<!-- end-no-copy -->
 
 # Licensing
 

@@ -1,4 +1,6 @@
-<p class="doc-section" data-no-copy>Basics</p>
+<!-- start-no-copy -->
+<p class="doc-section">Basics</p>
+<!-- end-no-copy -->
 
 # Domains
 
