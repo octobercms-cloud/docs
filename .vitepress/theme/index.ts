@@ -3,8 +3,9 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Ecosystem from './Ecosystem.vue'
-import GetStarted from './GetStarted.vue'
 import Logo from './Logo.vue'
+import NavActions from './NavActions.vue'
+import ThemePicker from './ThemePicker.vue'
 import './style.css'
 
 export default {
@@ -13,7 +14,8 @@ export default {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       'nav-bar-title-before': () => h(Logo),
-      'nav-bar-content-after': () => h(GetStarted),
+      'nav-bar-content-after': () => h(NavActions),
+      'nav-screen-content-after': () => h(ThemePicker),
       'sidebar-nav-before': () => h(Ecosystem),
     })
   },
