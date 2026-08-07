@@ -9,6 +9,26 @@
 
 @theme {
   --font-sans: "Albert Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* gray (zinc) */
+  --color-gray-50: oklch(98.5% 0 0);
+  --color-gray-100: oklch(96.7% 0.001 286.375);
+  --color-gray-200: oklch(92% 0.004 286.32);
+  --color-gray-300: oklch(87.1% 0.006 286.286);
+  --color-gray-400: oklch(70.5% 0.015 286.067);
+  --color-gray-500: oklch(55.2% 0.016 285.938);
+  --color-gray-600: oklch(44.2% 0.017 285.786);
+  --color-gray-700: oklch(37% 0.013 285.805);
+  --color-gray-800: oklch(27.4% 0.006 286.033);
+  --color-gray-900: oklch(21% 0.006 285.885);
+  --color-gray-950: oklch(14.1% 0.005 285.823);
+
+  /* october */
+  --color-october: oklch(0.6957 0.1599 55.69); /* ##e67e21 */
+  --color-october-highlight: oklch(0.963 0.0452 89.06); /* #fff2d1 */
+
+  /* easings */
+  --ease-out-circ: cubic-bezier(0, 0.55, 0.45, 1);
 }
 
 /**
@@ -57,6 +77,7 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  --vp-c-bg: var(--color-gray-50);
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
   --vp-c-default-3: var(--vp-c-gray-3);
@@ -83,6 +104,10 @@
   --vp-c-danger-soft: var(--vp-c-red-soft);
 }
 
+.dark {
+  --vp-c-bg: var(--color-gray-800);
+}
+
 /**
  * Component: Button
  * -------------------------------------------------------------------------- */
@@ -100,38 +125,6 @@
 }
 
 /**
- * Component: Home
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe 30%,
-    #41d1ff
-  );
-
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #bd34fe 50%,
-    #47caff 50%
-  );
-  --vp-home-hero-image-filter: blur(44px);
-}
-
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
-}
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(68px);
-  }
-}
-
-/**
  * Component: Custom Block
  * -------------------------------------------------------------------------- */
 
@@ -140,4 +133,53 @@
   --vp-custom-block-tip-text: var(--vp-c-text-1);
   --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+}
+
+/**
+ * Component: Sidebar
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-sidebar-bg-color: var(--vp-c-bg);
+}
+
+.VPSidebar .group + .group {
+  border-top: none;
+}
+
+.VPNavBarTitle.has-sidebar .title {
+  border-bottom-color: transparent;
+}
+
+.VPNavBar .divider,
+.VPNavBar .divider-line {
+  background-color: transparent;
+}
+
+.VPSidebarItem.is-link {
+  @apply rounded-xl px-3 -translate-x-3;
+}
+
+.VPSidebarItem.is-link:hover {
+  @apply bg-gray-200/50 dark:bg-gray-700/40;
+}
+
+.VPSidebarItem.is-link:hover .text {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.VPSidebarItem.is-link.is-active {
+  @apply bg-october/15 rounded-xl px-3 -translate-x-3 hover:bg-october/20;
+}
+
+.VPSidebarItem.is-link.is-active .text {
+  @apply text-orange-500! dark:text-orange-400!;
+}
+
+.VPSidebarItem.is-link:not(.is-active) .text {
+  @apply text-gray-500! hover:text-gray-700! dark:text-gray-400! dark:hover:text-gray-300!;
+}
+
+.VPSidebarItem:not(:last-child) {
+  @apply mb-0.5;
 }
