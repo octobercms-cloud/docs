@@ -145,6 +145,18 @@
   --vp-local-nav-bg-color: transparent;
 }
 
+@media (max-width: 959px) {
+  :root {
+    --vp-nav-bg-color: var(--vp-c-bg);
+    --vp-local-nav-bg-color: var(--vp-c-bg);
+    --vp-sidebar-bg-color: var(--vp-c-bg);
+  }
+}
+
+.VPSidebar.open {
+  background-color: var(--vp-c-bg) !important;
+}
+
 body {
   background-color: var(--vp-c-bg);
   background-image: linear-gradient(
@@ -163,6 +175,32 @@ body {
 
 .VPSidebar .group + .group {
   border-top: none;
+}
+
+.VPSidebar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-300) transparent;
+}
+
+.dark .VPSidebar {
+  scrollbar-color: var(--color-gray-600) transparent;
+}
+
+.VPSidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.VPSidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.VPSidebar::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-300);
+  border-radius: 9999px;
+}
+
+.dark .VPSidebar::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-600);
 }
 
 @media (min-width: 960px) {
@@ -192,7 +230,7 @@ body {
 }
 
 .VPSidebarItem.is-link {
-  @apply rounded-xl px-3 -translate-x-3;
+  @apply rounded-lg px-3 -translate-x-3;
 }
 
 .VPSidebarItem.is-link:hover {
@@ -204,7 +242,7 @@ body {
 }
 
 .VPSidebarItem.is-link.is-active {
-  @apply bg-october/15 rounded-xl px-3 -translate-x-3 hover:bg-october/20;
+  @apply bg-october/15 px-3 -translate-x-3 hover:bg-october/20;
 }
 
 .VPSidebarItem.is-link.is-active .text {
@@ -216,5 +254,5 @@ body {
 }
 
 .VPSidebarItem:not(:last-child) {
-  @apply mb-0.5;
+  @apply mb-1;
 }

@@ -2,6 +2,7 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import Ecosystem from './Ecosystem.vue'
 import Logo from './Logo.vue'
 import './style.css'
 
@@ -11,6 +12,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       'nav-bar-title-before': () => h(Logo),
+      'sidebar-nav-before': () => h(Ecosystem),
     })
   },
   enhanceApp({ app, router, siteData }) {
