@@ -13,6 +13,10 @@ export default defineConfig({
   description: 'Official documentation for octobercms.cloud',
   lastUpdated: true,
 
+  sitemap: {
+    hostname: 'https://docs.octobercms.cloud',
+  },
+
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.bunny.net' }],
