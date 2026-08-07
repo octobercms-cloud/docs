@@ -100,8 +100,8 @@
 
 <script setup lang="ts">
 import { ChevronDown, ChevronUp, Copy, ExternalLink } from '@lucide/vue'
-import { useData } from 'vitepress'
-import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { onContentUpdated, useData } from 'vitepress'
+import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { stripNoCopy } from './stripNoCopy'
 import { useExclusiveDropdown } from './useExclusiveDropdown'
 
@@ -164,7 +164,15 @@ async function copyMarkdown() {
   }
 }
 
-function findHeading() {
+let attachId = 0
+
+async function attachToHeading() {
+  const id = ++attachId
+  // Remount the teleport so it survives page content patches that
+  // replace the h1 and drop nodes Vue doesn't own.
+  heading.value = null
+  await nextTick()
+  if (id !== attachId) return
   heading.value = document.querySelector('.VPDoc .vp-doc h1')
 }
 
@@ -179,20 +187,15 @@ function onKeydown(event: KeyboardEvent) {
 }
 
 onMounted(() => {
-  findHeading()
+  attachToHeading()
   document.addEventListener('click', onDocumentClick)
   document.addEventListener('keydown', onKeydown)
 })
 
-watch(
-  () => page.value.relativePath,
-  async () => {
-    open.value = false
-    heading.value = null
-    await nextTick()
-    findHeading()
-  },
-)
+onContentUpdated(() => {
+  open.value = false
+  attachToHeading()
+})
 
 onUnmounted(() => {
   document.removeEventListener('click', onDocumentClick)

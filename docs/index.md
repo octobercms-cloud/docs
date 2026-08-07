@@ -4,12 +4,12 @@
 
 The official hosting platform for [October CMS](https://octobercms.com). Let us worry about infrastructure; you just focus on what makes your website amazing.
 
-October Cloud is a fully managed hosting and deployment platform. Here are just some of the headaches you can say goodbye to,
+October Cloud is a fully managed hosting and deployment platform. Here are just some of the features included,
 
-- Security
 - Databases
 - Object storage
 - SSL certificates
+- Push to deploy
 - Any much, much more!
 
 ## Project Status

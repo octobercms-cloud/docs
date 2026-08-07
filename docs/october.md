@@ -2,7 +2,7 @@
 
 # October CMS
 
-Our platform is built for, and deeply integrated with October CMS.
+Our platform is purpose built for, and deeply integrated with October CMS.
 
 ## Local Development
 
