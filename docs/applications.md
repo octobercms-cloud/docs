@@ -1,3 +1,5 @@
+<p class="doc-section">Basics</p>
+
 # Applications
 
 Create and manage applications on October Cloud.
