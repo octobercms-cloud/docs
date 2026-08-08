@@ -6,7 +6,6 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     items: [
       { text: 'Introduction', link: '/' },
       { text: 'October CMS', link: '/october' },
-      { text: 'Licensing', link: '/licensing' },
     ],
   },
   {
