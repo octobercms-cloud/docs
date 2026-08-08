@@ -58,7 +58,7 @@ At a high level, your Git repository remains the source of truth. Backend edits 
           └───────────┐       ┌───────────┘
                       ▼       ▼
                 ┌──────────────────┐
-                │  Reconciliation  │
+                │  Source control  │
                 └────────┬─────────┘
                          ▼
                 ┌──────────────────┐
