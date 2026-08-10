@@ -22,7 +22,6 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     text: 'Advanced',
     items: [
       { text: 'Organizations', link: '/organizations' },
-      { text: 'Source Control', link: '/source-control' },
       { text: 'Commands', link: '/commands' },
       { text: 'Logs', link: '/logs' },
       { text: 'Queue Workers', link: '/queue-workers' },

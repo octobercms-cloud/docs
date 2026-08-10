@@ -12,7 +12,26 @@ Our platform is built specifically for [October CMS](https://octobercms.com), an
 
 You just focus on making your website amazing.
 
-## Source Control
+## Local Development
+
+We recommend using the [official October Cloud runtimes](https://github.com/octobercms/runtimes). These Docker images are the shared foundation for production deployments, and a [dev container](https://containers.dev/) configuration is included in the October CMS codebase by default—no special setup is required to use them.
+
+Open your project in a dev container for the same PHP, Node, Nginx, and tooling stack that October Cloud runs in production. In other words: **If it works on your machine, it will work on production.**
+
+Just install a container engine like [Docker](https://www.docker.com/get-started), [OrbStack](https://orbstack.dev/download), or [Podman](https://podman.io/get-started), and you're good to go!
+
+Day to day, treat your repo like any other Git project: branch, commit, and push. You can develop with VS Code, Cursor, Claude Code, or even GitHub Codespaces. Use any setup you're familiar with.
+
+> [!NOTE] 💡 Tip
+> Don't worry if you're new to dev containers. Almost every IDE supports them out of the box. It's usually just a matter of clicking "yes" when opening the project.
+
+## Backend Editor
+
+The backend editor is a first-class citizen of the October Cloud — not a side path. Content editors, designers, and developers can make changes live in the admin area without leaving the browser or setting up a local environment.
+
+When a backend edit is saved, October Cloud reconciles that change into Git, and everyone stays on the same page.
+
+## Reconciliation
 
 Source control is one of the oldest problems in content management. October has an amazing backend editor. Our platform fully supports the editor, so your team can work however they prefer.
 
@@ -45,7 +64,7 @@ At a high level, your Git repository remains the source of truth. Backend edits 
   <g font-size="14" text-anchor="middle" class="fill-gray-900 dark:fill-gray-100">
     <text x="130" y="57">Local development</text>
     <text x="430" y="57">Backend editor</text>
-    <text x="280" y="177">Source control</text>
+    <text x="280" y="177">Reconciliation</text>
     <text x="280" y="269">Push to deploy</text>
   </g>
 </svg>
@@ -58,32 +77,13 @@ At a high level, your Git repository remains the source of truth. Backend edits 
           └───────────┐       ┌───────────┘
                       ▼       ▼
                 ┌──────────────────┐
-                │  Source control  │
+                │  Reconciliation  │
                 └────────┬─────────┘
                          ▼
                 ┌──────────────────┐
                 │  Push to deploy  │
                 └──────────────────┘
 </pre>
-
-## Local Development
-
-We recommend using the [official October Cloud runtimes](https://github.com/octobercms/runtimes). These Docker images are the shared foundation for production deployments. Open your project in a [dev container](https://containers.dev/) for the same PHP, Node, Nginx, and tooling stack that October Cloud runs in production.
-
-In other words: **If it works on your machine, it will work on production.**
-
-Just install a container engine like [Docker](https://www.docker.com/get-started), [OrbStack](https://orbstack.dev/download), or [Podman](https://podman.io/get-started), and you're good to go!
-
-Day to day, treat your repo like any other Git project: branch, commit, and push. You can develop with VS Code, Cursor, Claude Code, or even GitHub Codespaces. Use any setup you're familiar with.
-
-> [!NOTE] 💡 Tip
-> Don't worry if you're new to dev containers. Almost every IDE supports them out of the box. It's usually just a matter of clicking "yes" when opening the project.
-
-## Backend Editor
-
-The backend editor is a first-class citizen of the October Cloud — not a side path. Content editors, designers, and developers can make changes live in the admin area without leaving the browser or setting up a local environment.
-
-When a backend edit is saved, October Cloud reconciles that change into Git, and everyone stays on the same page.
 
 ## Licensing
 
