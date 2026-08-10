@@ -25,8 +25,6 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
       { text: 'Source Control', link: '/source-control' },
       { text: 'Artisan', link: '/artisan' },
       { text: 'Logs', link: '/logs' },
-      { text: 'Build Scripts', link: '/build-scripts' },
-      { text: 'Environment Variables', link: '/environment-variables' },
       { text: 'Queue Workers', link: '/queue-workers' },
       { text: 'Scheduled Tasks', link: '/scheduled-tasks' },
     ],
