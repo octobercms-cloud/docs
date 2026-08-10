@@ -26,7 +26,7 @@ Members have full privileges within an organization's applications. This include
 - Managing domains
 - Editing environment variables
 - Viewing logs
-- Running Artisan commands
+- Running commands
 - Configuring databases, storage, and other application resources
 
 The following actions are restricted to the organization owner:

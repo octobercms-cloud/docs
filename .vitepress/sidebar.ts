@@ -23,7 +23,7 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     items: [
       { text: 'Organizations', link: '/organizations' },
       { text: 'Source Control', link: '/source-control' },
-      { text: 'Artisan', link: '/artisan' },
+      { text: 'Commands', link: '/commands' },
       { text: 'Logs', link: '/logs' },
       { text: 'Queue Workers', link: '/queue-workers' },
       { text: 'Scheduled Tasks', link: '/scheduled-tasks' },
