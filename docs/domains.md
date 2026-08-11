@@ -24,6 +24,9 @@ To connect a custom domain, enter the domain on the domains page and follow the 
 
 ## Recommended setup
 
-We strongly recommend using a `www` subdomain as your primary domain—for example, `www.example.com` rather than `example.com`.
+We strongly recommend using a `www` subdomain as your primary domain. For example, `www.acme.com` rather than `acme.com`. Apex domains cannot be connected with a CNAME: a CNAME aliases the entire hostname, but the apex must retain other DNS records such as SOA and NS, so providers do not allow a CNAME at the root.
 
-Point the apex domain (`example.com`) to the `www` version using a 302 redirect at your domain provider. This approach offers the best compatibility across domain providers, since apex domains cannot always be configured with a CNAME record.
+Point the apex domain (`acme.com`) to the `www` version using a 301 redirect at your domain registrar. This keeps the apex working for visitors while routing traffic through the supported CNAME setup.
+
+> [!NOTE]
+> A 301 redirect from the apex to `www` does not hurt SEO. Search engines treat this as normal domain canonicalization and pass ranking signals to the `www` version.
