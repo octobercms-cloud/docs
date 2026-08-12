@@ -59,11 +59,9 @@ When you use the Services, we may automatically collect information such as:
 
 We use cookies and similar technologies to operate the Services, maintain sessions, remember preferences, provide security features, and understand how the Services are used.
 
-We use analytics tools on our public websites and within authenticated portions of the Services. These tools may collect information about how you interact with the Services, including pages viewed, features used, approximate location, device and browser information, referring pages, and other usage information.
+We use Google Analytics on our public websites and within authenticated portions of the Services. Google Analytics may collect information about how you interact with the Services, including pages viewed, features used, approximate location, device and browser information, referring pages, and other usage information.
 
-We use this information to understand how people use October Cloud, evaluate and improve the Services, diagnose usability issues, and make product and business decisions.
-
-Third-party analytics providers may process this information in accordance with their own privacy practices.
+We use this information to understand how people use October Cloud, evaluate and improve the Services, diagnose usability issues, and make product and business decisions. Google may process information collected through Google Analytics in accordance with its own privacy practices.
 
 ## Customer Applications and Customer Data
 
@@ -109,6 +107,7 @@ We use third-party service providers to operate October Cloud. These providers m
 * source code integrations;
 * payment processing and billing;
 * email delivery;
+* analytics;
 * monitoring, logging, and error reporting;
 * security and fraud prevention; and
 * customer support and business operations.
