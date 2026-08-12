@@ -4,7 +4,7 @@
 
 # Applications
 
-Applications represent the heart of your October CMS website. It's the central hub for all of it's related resources like domains and databases.
+Applications represent the heart of your October CMS website. It's the central hub for all of its related resources like domains and databases.
 
 ## Creating applications
 
@@ -31,7 +31,7 @@ Once your initial deployment is complete, you can preview it using your platform
 
 For new applications, push‑to‑deploy will be enabled by default. If you'd like to handle deployments manually, this feature can be disabled in "Settings".
 
-During reconciliation, when the platform opens a pull request from the backend, push‑to‑deploy is paused until that pull request is merged. Once merged, push‑to‑deploy resumes automatically.
+When a [reconciliation](https://docs.octobercms.cloud/october#reconciliation) pull request is open, push‑to‑deploy is paused until that pull request is merged. Once merged, push‑to‑deploy resumes automatically.
 
 ## Environment variables
 
