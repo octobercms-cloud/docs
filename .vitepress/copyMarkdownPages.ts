@@ -2,6 +2,7 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { cleanMarkdownContent } from './cleanMarkdownContent'
 import { getMarkdownPageFiles } from './docPages'
+import { appendLastUpdatedContext } from './lastUpdated'
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import type { Plugin } from 'vite'
 
@@ -21,7 +22,7 @@ function serveTextFile(
 
 function createMarkdownMiddleware(
   getFilePath: (pathname: string) => string | undefined,
-  transform: (content: string) => string = (content) => content,
+  transform: (content: string, filePath: string) => string = (content) => content,
 ): (req: IncomingMessage, res: ServerResponse, next: () => void) => void {
   return (req, res, next) => {
     const [pathname, query] = req.url?.split('?') ?? []
@@ -40,7 +41,7 @@ function createMarkdownMiddleware(
       serveTextFile(
         res,
         'text/markdown; charset=utf-8',
-        transform(readFileSync(filePath, 'utf8')),
+        transform(readFileSync(filePath, 'utf8'), filePath),
       )
       return
     }
@@ -66,7 +67,12 @@ function createMarkdownMiddleware(
 
 export function copyMarkdownPages(outDir: string, srcDir: string): void {
   for (const file of getMarkdownPageFiles(srcDir)) {
-    const content = cleanMarkdownContent(readFileSync(join(srcDir, file), 'utf8'))
+    const filePath = join(srcDir, file)
+    const content = appendLastUpdatedContext(
+      cleanMarkdownContent(readFileSync(filePath, 'utf8')),
+      filePath,
+    )
+
     writeFileSync(join(outDir, file), content, 'utf8')
   }
 }
@@ -80,7 +86,7 @@ export function markdownPagesPlugin({
   )
   const devMiddleware = createMarkdownMiddleware(
     (pathname) => join(srcDir, pathname.slice(1)),
-    cleanMarkdownContent,
+    (content, filePath) => appendLastUpdatedContext(cleanMarkdownContent(content), filePath),
   )
 
   return {

@@ -43,7 +43,7 @@ const analyticsHead: HeadConfig[] =
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   buildEnd(siteConfig: SiteConfig) {
-    writeLlmsTxt(siteConfig.outDir)
+    writeLlmsTxt(siteConfig.outDir, siteConfig.srcDir)
     writeLlmsFullTxt(siteConfig.outDir, siteConfig.srcDir)
     copyMarkdownPages(siteConfig.outDir, siteConfig.srcDir)
   },
