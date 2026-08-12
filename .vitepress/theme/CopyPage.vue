@@ -123,8 +123,7 @@ const pageUrl = computed(() =>
 )
 
 const prompt = computed(
-  () =>
-    `Read this documentation page and help me understand it: ${pageUrl.value}`,
+  () => `Read from ${pageUrl.value} so I can ask questions about it.`,
 )
 
 const chatGptUrl = computed(
