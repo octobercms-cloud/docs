@@ -191,7 +191,7 @@ Customers are responsible for ensuring that applications they operate using the 
 
 ## Changes to This Privacy Policy
 
-We may update this Privacy Policy from time to time to reflect changes to our Services, practices, or legal obligations.
+This Privacy Policy is subject to change. We may update it from time to time to reflect changes to our Services, practices, or legal obligations.
 
 When we make changes, we will update the "Last updated" date at the bottom of this policy. If changes are material, we may provide additional notice where appropriate or required by law.
 
