@@ -52,6 +52,8 @@ export default defineConfig({
   },
   cleanUrls: true,
   head: [
+    ['link', { rel: 'llms', href: '/llms.txt' }],
+    ['link', { rel: 'llms-full', href: '/llms-full.txt' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.bunny.net' }],
     ['link', { href: 'https://fonts.bunny.net/css?family=albert-sans:400,700', rel: 'stylesheet' }],
