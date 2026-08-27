@@ -35,7 +35,7 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
       { text: 'Changelog', link: '/changelog' },
       { text: 'Security & Abuse', link: '/security-and-abuse' },
       { text: 'Terms of Service', link: '/terms-of-service' },
-      { text: 'Privacy Policy', link: '/privacy-policy' },
+      { text: 'Privacy Policy', link: '/privacy' },
     ],
   },
 ]

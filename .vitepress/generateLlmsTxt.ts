@@ -1,15 +1,24 @@
 import { join } from 'node:path'
 import { writeFileSync } from 'node:fs'
-import { getDocPages } from './docPages'
+import { getDocPages, linkToMarkdownPath } from './docPages'
+import { getLastUpdatedLine } from './lastUpdated'
 
-export function generateLlmsTxtContent(): string {
+export function generateLlmsTxtContent(srcDir: string): string {
   const pages = getDocPages()
 
   const docEntries = pages
-    .map(
-      (page) =>
-        `- ${page.title}\n  ${page.url}`,
-    )
+    .map((page) => {
+      const filePath = join(srcDir, linkToMarkdownPath(page.link))
+      const lastUpdatedLine = getLastUpdatedLine(filePath)
+
+      return [
+        `- ${page.title}`,
+        `  ${page.url}`,
+        lastUpdatedLine ? `  ${lastUpdatedLine}` : null,
+      ]
+        .filter(Boolean)
+        .join('\n')
+    })
     .join('\n\n')
 
   return `# October Cloud
@@ -29,6 +38,6 @@ ${docEntries}
 `
 }
 
-export function writeLlmsTxt(outDir: string): void {
-  writeFileSync(join(outDir, 'llms.txt'), generateLlmsTxtContent(), 'utf8')
+export function writeLlmsTxt(outDir: string, srcDir: string): void {
+  writeFileSync(join(outDir, 'llms.txt'), generateLlmsTxtContent(srcDir), 'utf8')
 }
