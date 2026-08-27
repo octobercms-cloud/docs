@@ -20,13 +20,11 @@ The platform domain can be changed from the domains page if you need a different
 
 ## Custom domains
 
-To connect a custom domain, enter the domain on the domains page and follow the instructions to attach the generated CNAME records through your domain provider. Once DNS has propagated and the records are verified, traffic to your custom domain will be routed to your application with a platform-managed SSL certificate.
+Enter the domain on the domains page and add the generated `CNAME` records at your provider. Once verified, traffic is routed to your application with a platform-managed SSL certificate.
 
-## Recommended setup
+Use a `www` subdomain as your primary domain (for example, `www.acme.com`). Apex domains are not supported at this time because they must keep `SOA` and `NS` records.
 
-We strongly recommend using a `www` subdomain as your primary domain. For example, `www.acme.com` rather than `acme.com`. Apex domains cannot be connected with a CNAME: a CNAME aliases the entire hostname, but the apex must retain other DNS records such as SOA and NS, so providers do not allow a CNAME at the root.
-
-Point the apex domain (`acme.com`) to the `www` version using a 301 redirect at your domain registrar. This keeps the apex working for visitors while routing traffic through the supported CNAME setup.
+Point the apex (`acme.com`) to `www` with a 301 redirect at your registrar.
 
 > [!NOTE]
 > A 301 redirect from the apex to `www` does not hurt SEO. Search engines treat this as normal domain canonicalization and pass ranking signals to the `www` version.
